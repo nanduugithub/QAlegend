@@ -13,8 +13,9 @@ public class WebElementUtility {
     public static void enterValue(WebElement element,String valueToEnter){
         element.sendKeys(valueToEnter);
     }
-    public static void getTextFromElement(WebElement element){
+    public static String getTextFromElement(WebElement element){
         element.getText();
+        return element.getText();
     }
     public static boolean isElementDisplayed(WebElement element){
         boolean status=element.isDisplayed();
