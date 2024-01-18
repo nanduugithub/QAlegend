@@ -30,8 +30,6 @@ public class HomePageTest extends Base {
             String actualHomePageTitle = home.getTitle();
             String expectedHomePageTitle = data.get(1);
             Assert.assertEquals(actualHomePageTitle, expectedHomePageTitle, Messages.TITLE_MISMATCH);
-
-
     }
 
     @Test

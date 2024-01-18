@@ -21,7 +21,7 @@ public class LoginPageTest extends Base {
         LoginPage login = new LoginPage(driver);
         String actualPageTitle = login.getPageTitle();
         ArrayList<String> data = readData(Constants.TEST_DATA_EXCEL_PATH, Constants.LOGIN_PAGE);
-        String expectedPageTitle = data.get(0 );
+        String expectedPageTitle = data.get(0);
         Assert.assertEquals(actualPageTitle, expectedPageTitle, Messages.TITLE_MISMATCH);
 
     }

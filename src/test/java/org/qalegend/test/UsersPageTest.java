@@ -1,4 +1,8 @@
 package org.qalegend.test;
 
-public class UsersPageTest {
+import org.qalegend.automationcore.Base;
+
+public class UsersPageTest extends Base {
+
+
 }

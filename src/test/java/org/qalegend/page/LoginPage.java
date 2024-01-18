@@ -8,10 +8,12 @@ import org.qalegend.utilities.WebElementUtility;
 
 public class LoginPage {
     WebDriver driver;
-    public LoginPage(WebDriver driver){
-        this.driver=driver;
-        PageFactory.initElements(driver,this);
+
+    public LoginPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
+
     @FindBy(id = "username")
     WebElement userNameField;
 
@@ -26,6 +28,14 @@ public class LoginPage {
 
     @FindBy(xpath = "//a[@class='btn btn-link']")
     WebElement forgotPassWordMenu;
+
+    @FindBy(xpath = "//button[@class='btn btn-default btn-sm']")
+    WebElement endTourButtonField;
+
+    @FindBy(xpath = "//span[contains(text(),'User Management')]")
+    WebElement userManagementOptionField;
+
+
     public String getPageTitle() {
         return driver.getTitle();
     }
@@ -38,6 +48,7 @@ public class LoginPage {
     public void enterUserName(String username) {
         WebElementUtility.enterValue(userNameField, username);
     }
+
     public void enterPassWord(String password) {
         WebElementUtility.enterValue(passWordField, password);
     }
@@ -46,8 +57,19 @@ public class LoginPage {
         WebElementUtility.clickOnElement(loginButtonField);
         return new HomePage(driver);
     }
+
     public String getText() {
         String errorMessageText = WebElementUtility.getTextFromElement(errorMessageField);
         return errorMessageText;
+    }
+
+    public HomePage clickOnEndTourButton() {
+        WebElementUtility.clickOnElement(endTourButtonField);
+        return new HomePage(driver);
+    }
+
+    public UserManagementPage clickOnUserManagement() {
+        WebElementUtility.clickOnElement(userManagementOptionField);
+        return new UserManagementPage(driver);
     }
 }

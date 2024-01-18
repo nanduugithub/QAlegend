@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class ResetPageTest extends Base {
 
-    @Test
+    @Test(groups = "Sanity")
     public void verifyResetPageTitle(){
         LoginPage login=new LoginPage(driver);
         ResetPage reset=login.clickOnForgotPassWordMenu();
@@ -23,7 +23,7 @@ public class ResetPageTest extends Base {
         Assert.assertEquals(actualPageTitle,expectedPageTitle, Messages.TITLE_MISMATCH);
 
     }
-    @Test
+    @Test(groups = "Regression")
     public void verifyErrorMessageWithInvalidEmailID(){
         LoginPage login=new LoginPage(driver);
         ResetPage reset=login.clickOnForgotPassWordMenu();
@@ -33,6 +33,6 @@ public class ResetPageTest extends Base {
         reset.clickOnSendPassWordRestLink();
         String actualErrorMessage= reset.getText();
         String expectedErrorMessage= data.get(3);
-        Assert.assertEquals(actualErrorMessage,expectedErrorMessage,Messages.PASSWORD_RESET_LINK_SEND_SUCCESSFULLY);
+        Assert.assertEquals(actualErrorMessage,expectedErrorMessage,Messages.WRONG_USER_EMAIL);
     }
 }
