@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Functional Suite">
+    <test name="Sanity Test">
+        <classes>
+            <class name="org.qalegend.test.LoginPageTest"/>
+            <class name="org.qalegend.test.HomePageTest"/>
+            <class name="org.qalegend.test.ResetPageTest"/>
+            <class name="org.qalegend.test.AddUsersPageTest"/>
+            <class name="org.qalegend.test.UserManagementPageTest"/>
+        </classes>
+    </test>
+    <test name="Smoke Test">
+        <classes>
+            <class name="org.qalegend.test.LoginPageTest"/>
+            <class name="org.qalegend.test.AddUsersPageTest"/>
+        </classes>
+    </test>
+    <test name="Regression Test">
+        <classes>
+            <class name="org.qalegend.test.ResetPageTest"/>
+            <class name="org.qalegend.test.HomePageTest"/>
+        </classes>
+    </test>
+</suite>

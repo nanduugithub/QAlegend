@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 
 public class AddUsersPageTest extends Base {
-    @Test
+    @Test(groups = "Sanity")
     public  void verifyAddUserPageTitle(){
 
         LoginPage login = new LoginPage(driver);
@@ -35,7 +35,7 @@ public class AddUsersPageTest extends Base {
         Assert.assertEquals(actualUserPageTitle, expectedUserPageTitle, Messages.TITLE_MISMATCH);
 
     }
-    @Test
+    @Test(groups = "Smoke")
     public  void verifyAddUser(){
         String firstName = RandomDataUtility.getFirstName();
         String lastName = RandomDataUtility.getLastName();
@@ -61,7 +61,7 @@ public class AddUsersPageTest extends Base {
         adduser.clickOnSaveButton();
 
     }
-    @Test
+    @Test(groups = "Smoke")
     public void verifyUserLoginWithNewlyAddedUser(){
             LoginPage login = new LoginPage(driver);
             ArrayList<String> data = ExcelUtility.readData(Constants.TEST_DATA_EXCEL_PATH, Constants.ADD_USER_PAGE);
